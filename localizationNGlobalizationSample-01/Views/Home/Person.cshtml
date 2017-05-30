@@ -1,0 +1,26 @@
+﻿@model List<localizationNGlobalizationSample_01.Models.Person>
+
+
+@{
+    ViewBag.Title = "Person";
+}
+
+<h2>Person</h2>
+@foreach(var item in Model)
+{
+    <div>
+        <div>
+            <span>Name</span>
+            <span>@item.Name</span>
+        </div>
+        <div>
+            <span>Age</span>
+            <span>@item.Age</span>
+        </div>
+        
+    </div>
+}
+
+@Html.ActionLink("Add Person", "Create")
+
+

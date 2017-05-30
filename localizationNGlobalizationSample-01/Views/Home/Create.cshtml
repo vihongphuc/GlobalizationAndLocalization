@@ -1,0 +1,36 @@
+﻿@using localizationNGlobalizationSample_01.Models;
+@model Person
+
+@{
+    ViewBag.Title = "Create";
+}
+@using (Html.BeginForm())
+{
+    <h1> @localizationNGlobalizationSample_Resource.Resources.DisplayString </h1>
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.Name)
+        </div>
+        <div class="editor-feild">
+            @Html.EditorFor(model=>model.Name)
+            @Html.ValidationMessageFor(model=>model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.Age)            
+        </div>
+        <div class="editor-feild">
+            @Html.TextAreaFor(model => model.Age)
+            @Html.ValidationMessageFor(model=>model.Age)
+        </div>
+        <p>
+            <input type="submit" value="@localizationNGlobalizationSample_Resource.Resources.Submit" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Person")
+</div>
